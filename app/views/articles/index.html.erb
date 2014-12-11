@@ -1,0 +1,30 @@
+
+
+<div class="container">
+
+  <div class="blog-header">
+    <h1 class="blog-title">Articulos</h1>
+    <p class="lead blog-description">Make it Real</p>
+  </div>
+
+    
+  <div class="row">
+    <div class="col-sm-8 blog-main" id="post_list">
+       
+      <% @articles.each do |article| %>
+        <div class="blog-post">
+          <h2 class="blog-post-title"><%= article.title %></h2>
+          <p class="blog-post-meta"><%= article.created_at %></p>
+          <p class="contenido"><%= article.content %></p>
+          <%= link_to 'Ver', article_path(article), class: "btn btn-default" %>
+          <%= link_to 'Editar', edit_article_path(article), remote: true, class: "btn btn-default" %>
+          <%= link_to 'Eliminar', article_path(article), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
+        </div>
+      <% end %>
+    </div>
+    <div class="new-post col-sm-3 col-sm-offset-1">
+      <%= link_to 'Nuevo Post', new_article_path, remote: true, class: "btn btn-primary btn-lg" %>
+    </div>
+    
+  </div>
+</div>
