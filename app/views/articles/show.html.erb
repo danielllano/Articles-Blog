@@ -11,6 +11,16 @@
       <%= link_to 'Editar', edit_article_path(@article), class: "btn btn-default" %>
       <%= link_to 'Eliminar', article_path(@article), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
       </div>
+      
+      <h3>Comentarios</h3>
+      <hr>
+
+      <div class="media">
+        <%= render @article.comments %>
+      </div>
+
+      <h4>Has un comentario:</h4>
+      <%= render "comments/form" %>
 
     </div>
   </div>
