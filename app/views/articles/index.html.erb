@@ -17,7 +17,7 @@
           <p class="blog-post-meta"><%= article.created_at %></p>
           <p class="contenido"><%= article.content %></p>
           <%= link_to 'Ver', article_path(article), class: "btn btn-default" %>
-          <%= link_to 'Editar', edit_article_path(article), remote: true, class: "btn btn-default" %>
+          <%= link_to 'Editar', edit_article_path(article), class: "btn btn-default" %>
           <%= link_to 'Eliminar', article_path(article), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
         </div>
       <% end %>
