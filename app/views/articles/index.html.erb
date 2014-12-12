@@ -9,14 +9,17 @@
   </div>
 
     
-  <div class="row">
+  <div class="row" id="index-row">
     <div class="col-sm-8 blog-main" id="post_list">
        
       <% @articles.each do |article| %>
-        <div class="blog-post">
-          <h2 class="blog-post-title"><%= article.title %></h2>
-          <p class="blog-post-meta"><%= article.created_at %></p>
+        <div class="blog-post" id="<%= article.id %>"><hr>
+          <h3 class="blog-post-title"><%= article.title %></h3>
+          <p class="blog-post-meta pull-right"><%= article.created_at %></p>
           <p class="contenido"><%= article.content %></p>
+          <p class="blog-post-comments">
+            <%= article.comments.count %> Comentarios
+          </p>
           <%= link_to 'Ver', article_path(article), class: "btn btn-default" %>
           <%= link_to 'Editar', edit_article_path(article), remote: true, class: "btn btn-default" %>
           <%= link_to 'Eliminar', article_path(article), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
@@ -25,14 +28,16 @@
     </div>
     <div class="new-post col-sm-3 col-sm-offset-1 blog-sidebar">
       <h2 class="sidebar-title">Ultimos Articulos</h2><hr>
-      <% @articles.first(5).each do |article| %>
-        <%= link_to article_path(article) do %>
-          <div class="sidebar-module">
-            <h4><%= article.title %></h4>
-            <p class="blog-post-meta"><%= article.created_at %></p>                    
-          </div><br>
+      <div id="last_posts_list">
+        <% @articles.first(5).each do |article| %>
+          <%= link_to article_path(article) do %>
+            <div class="sidebar-module">
+              <h4><%= article.title %></h4>
+              <p class="blog-post-meta"><%= article.created_at %></p>               
+            </div><br>
+          <% end %>
         <% end %>
-      <% end %>
+      </div>
     </div>
     
   </div>
