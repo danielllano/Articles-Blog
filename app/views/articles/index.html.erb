@@ -6,7 +6,6 @@
     <%= link_to 'Nuevo Post', new_article_path, remote: true, class: "btn btn-primary btn-lg pull-right pull" %>
     <h1 class="blog-title">Articulos</h1>
     <p class="lead blog-description">Make it Real</p>
-
   </div>
 
     
@@ -19,7 +18,7 @@
           <p class="blog-post-meta"><%= article.created_at %></p>
           <p class="contenido"><%= article.content %></p>
           <%= link_to 'Ver', article_path(article), class: "btn btn-default" %>
-          <%= link_to 'Editar', edit_article_path(article), class: "btn btn-default" %>
+          <%= link_to 'Editar', edit_article_path(article), remote: true, class: "btn btn-default" %>
           <%= link_to 'Eliminar', article_path(article), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
         </div>
       <% end %>
@@ -27,10 +26,12 @@
     <div class="new-post col-sm-3 col-sm-offset-1 blog-sidebar">
       <h2 class="sidebar-title">Ultimos Articulos</h2><hr>
       <% @articles.first(5).each do |article| %>
-        <div class="sidebar-module">
-          <h4><%= article.title %></h4>
-          <p class="blog-post-meta"><%= article.created_at %></p>                    
-        </div><br>
+        <%= link_to article_path(article) do %>
+          <div class="sidebar-module">
+            <h4><%= article.title %></h4>
+            <p class="blog-post-meta"><%= article.created_at %></p>                    
+          </div><br>
+        <% end %>
       <% end %>
     </div>
     
