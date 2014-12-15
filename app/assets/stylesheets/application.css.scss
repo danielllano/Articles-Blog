@@ -37,6 +37,12 @@ font-weight: normal;
 color: #333;
 }
 
+.navbar-link {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  margin-top: 15px;
+}
+
 .blog-post {
 margin-bottom: 50px;
 }
@@ -47,10 +53,14 @@ line-height: 1.5;
 }
 
 .blog-title {
-margin-top: 30px;
+margin-top: 10px;
 margin-bottom: 0;
 font-size: 60px;
 font-weight: normal;
+}
+
+.blog-subtitle {
+  font-size: 21px;
 }
 
 .blog-description {
@@ -118,3 +128,5 @@ input#post_published {
   padding: 5px;
   margin-bottom: 10px;
 }
+
+
