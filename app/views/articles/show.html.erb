@@ -7,9 +7,10 @@
       <h2 class="blog-post-title"><%= @article.title %></h2>
       <p class="blog-post-meta"><%= @article.created_at %>
       <p class="contenido"><%= @article.content %></p>
-      
-      <%= link_to 'Editar', edit_article_path(@article), remote: true, class: "btn btn-default" %>
-      <%= link_to 'Eliminar', article_path(@article), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
+      <% if @article.user == current_user %>
+        <%= link_to 'Editar', edit_article_path(@article), remote: true, class: "btn btn-default" %>
+        <%= link_to 'Eliminar', article_path(@article), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
+      <% end %>
       </div>
       
       <h3>Comentarios</h3>
