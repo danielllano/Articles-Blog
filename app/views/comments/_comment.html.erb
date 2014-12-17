@@ -1,13 +1,11 @@
 <div class="comment-module">
-  <h4 class="media-heading">
-    <strong><%= comment.commenter %></strong>
-   </h4>
+  <h4 class="media-heading"><strong><%= comment.user.name %></strong></h4>
+  <p class="blog-post-meta" id="comment-date"><%= comment.created_at %></p>
+  <p><%= comment.body %></p>
 
-  <p>
-    <%= comment.body %>
-  </p>
-
-  <p>
-    <%= link_to 'Eliminar Comentario', [comment.article, comment], method: :delete, data: { confirm: 'Are you sure?' } %>
-  </p>
+  <% if comment.user == current_user || @article.user == current_user %>
+    <p>
+      <%= link_to 'Eliminar Comentario', [comment.article, comment], class:"delete-comment", method: :delete, data: { confirm: 'Are you sure?' } %>
+    </p>
+  <% end %>
 </div>
