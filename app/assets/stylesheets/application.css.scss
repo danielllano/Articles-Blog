@@ -75,7 +75,7 @@ display: inline-block;
 }
 
 .blog-post-meta {
-margin-bottom: 10px;
+margin-bottom: 0px;
 color: #999;
 }
 
@@ -114,6 +114,18 @@ input#post_published {
 .sidebar-module:hover{
   background-color: #eee;
   text-decoration: none;
+}
+
+.sidebar-titles {
+  margin-bottom: 0px;
+}
+
+.side-list {
+  margin-bottom: 50px;
+}
+
+.sidebar-hr {
+  margin: 10px 0;
 }
 
 .blog-post-comments {

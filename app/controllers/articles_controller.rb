@@ -22,7 +22,8 @@ class ArticlesController < ApplicationController
   end
 
   def index
-    @articles = Article.all.order(created_at: :desc)
+    @articles = Article.all
+    @ordered_comments = Comment.group(:article_id).order('count_all desc').count
   end
 
   def edit
