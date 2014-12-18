@@ -18,7 +18,9 @@
         
         <% if user_signed_in? %>
           <li><%= link_to "Cerrar Sesion", destroy_user_session_path, class:"navbar-link", method: :delete %></li>
-          <li><%= link_to '+ Nuevo Post', new_article_path, remote: true, class:"navbar-link" %></li>
+          <% if current_user.publisher == true %>
+            <li><%= link_to '+ Nuevo Post', new_article_path, remote: true, class:"navbar-link" %></li>
+          <% end %>
           <li><%= image_tag Gravatar.new(current_user.email).image_url, class: 'header-user-picture' %></li>
           <% else %>
             <li><%= link_to "Iniciar Sesion", new_user_session_path, class:"navbar-link" %></li>
