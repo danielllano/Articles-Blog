@@ -1,11 +1,14 @@
 <div class="comment-module">
-  <h4 class="media-heading"><strong><%= comment.user.name %></strong></h4>
-  <p class="blog-post-meta" id="comment-date"><%= comment.created_at %></p>
-  <p><%= comment.body %></p>
+  <%= image_tag Gravatar.new(comment.user.email).image_url, class: 'comment-user-picture pull-left' %>
+  <div class="comment-data">
+    <h4 class="media-heading"><strong><%= comment.user.name %></strong></h4>
+    <p class="blog-post-meta" id="comment-date"><%= comment.created_at %></p>
+    <p><%= comment.body %></p>
 
-  <% if comment.user == current_user || @article.user == current_user %>
-    <p>
-      <%= link_to 'Eliminar Comentario', [comment.article, comment], class:"delete-comment", method: :delete, data: { confirm: 'Are you sure?' } %>
-    </p>
-  <% end %>
+    <% if comment.user == current_user || @article.user == current_user %>
+      <p>
+        <%= link_to 'Eliminar Comentario', [comment.article, comment], class:"delete-comment", method: :delete, data: { confirm: 'Are you sure?' } %>
+      </p>
+    <% end %>
+  </div>
 </div>

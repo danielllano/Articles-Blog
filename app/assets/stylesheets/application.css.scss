@@ -111,6 +111,7 @@ input#post_published {
 .sidebar-module{
   padding: 2px;
 }
+
 .sidebar-module:hover{
   background-color: #eee;
   text-decoration: none;
@@ -141,12 +142,38 @@ input#post_published {
   margin-bottom: 10px;
 }
 
+.comment-data {
+  display: inline-block;
+  margin-left: 5px;
+}
+
+.comment-user-picture {
+  width: 65px;
+}
+
+.media-heading,
+#comment-date {
+  display: inline-block;
+}
+
 .blog-post-meta#comment-date{
   font-size: 14px;
 }
 
 a.delete-comment {
+  display: block;
   font-size: 15px;
 }
 
+.main-user-picture {
+  width: 80%;
+  border-radius: 50%;
+}
 
+.article-author {
+  text-align: center;
+}
+
+.content-row {
+  margin-top: 10px;
+}

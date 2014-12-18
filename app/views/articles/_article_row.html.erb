@@ -1,14 +1,26 @@
 <div class="blog-post" id="<%= article.id %>">
   <h3 class="blog-post-title"><%= article.title %></h3>
   <p class="blog-post-meta pull-right"><%= article.created_at %></p>
-  <p><strong><%= article.user.name if article.user %></strong></p>
-  <p class="contenido"><%= article.content %></p>
-  <p class="blog-post-comments">
-    <%= article.comments.count %> Comentarios
-  </p>
-  <%= link_to 'Ver', article_path(article), class: "btn btn-default" %>
-  <% if article.user == current_user %>
-    <%= link_to 'Editar', edit_article_path(article), remote: true, class: "btn btn-default" %>
-    <%= link_to 'Eliminar', article_path(article), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
-  <% end %>
+  
+  <div class="content-row row">
+    <div class="article-author col-md-4">
+      <% if article.user %>
+        <%= image_tag Gravatar.new(article.user.email).image_url, class: 'main-user-picture' %>
+        <p><strong><%= article.user.name %></strong></p>
+      <%  end %>  
+    </div>
+  
+    <div class="col-md-8">
+      <p class="contenido"><%= article.content %></p>
+      <p class="blog-post-comments"><%= article.comments.count %> Comentarios</p>
+
+      <div class="post-actions pull-right">
+        <%= link_to 'Ver', article_path(article), class: "btn btn-default" %>
+        <% if article.user == current_user %>
+          <%= link_to 'Editar', edit_article_path(article), remote: true, class: "btn btn-default" %>
+          <%= link_to 'Eliminar', article_path(article), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div><hr>
