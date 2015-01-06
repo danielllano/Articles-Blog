@@ -2,7 +2,6 @@ class ArticlesController < ApplicationController
 
   def new
     @article = Article.new
-    @titulo = "Nuevo Articulo"
   end
 
   def create
@@ -10,7 +9,6 @@ class ArticlesController < ApplicationController
     if @article.save
       render 'create'
     else
-      @titulo = "Nuevo Articulo"
       render 'new'
     end
   end
@@ -25,7 +23,6 @@ class ArticlesController < ApplicationController
 
   def edit
     @article = Article.find(params[:id])
-    @titulo = "Editar Articulo"
   end
 
   def update
@@ -33,7 +30,6 @@ class ArticlesController < ApplicationController
     if @article.update(article_params)
       render 'update'
     else
-      @titulo = "Editar Articulo"
       render 'edit'
     end
   end
