@@ -1,0 +1,3 @@
+$('#new-post-modal').remove();
+
+$('#post_list').prepend("<%= j render partial: 'article_row', locals: {article: @article} %>");

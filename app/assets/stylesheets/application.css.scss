@@ -1,0 +1,120 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ 
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+body {
+font-family: Georgia, "Times New Roman", Times, serif;
+color: #555;
+background: #eee;
+}
+
+.container {
+background: #fff;
+margin-top: 30px;
+margin-bottom: 50px;
+
+}
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+margin-top: 0;
+font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+font-weight: normal;
+color: #333;
+}
+
+.blog-post {
+margin-bottom: 50px;
+}
+
+.blog-main {
+font-size: 18px;
+line-height: 1.5;
+}
+
+.blog-title {
+margin-top: 30px;
+margin-bottom: 0;
+font-size: 60px;
+font-weight: normal;
+}
+
+.blog-description {
+  font-size: 20px;
+  color: #999;
+}
+
+.blog-post-title {
+margin-bottom: 5px;
+font-size: 30px;
+display: inline-block;
+}
+
+.blog-post-meta {
+margin-bottom: 10px;
+color: #999;
+}
+
+p {
+margin: 0 0 10px;
+}
+
+.new-post {
+  margin-bottom: 10px;
+}
+
+.btn-default, .btn-danger {
+border-radius: 30px;
+width: 100px;
+}
+
+input#post_published {
+  margin-left: 0px;
+}
+
+.form-label {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.container.show-view {
+  padding-top: 40px;
+}
+
+#index-row {
+  margin-top: 60px;
+}
+
+.sidebar-module{
+  padding: 2px;
+}
+.sidebar-module:hover{
+  background-color: #eee;
+  text-decoration: none;
+}
+
+.blog-post-comments {
+  color: #3498db;
+  display: block;
+  text-align: right;
+  width: 100%
+}
+
+.comment-module {
+  background-color: #eee;
+  padding: 5px;
+  margin-bottom: 10px;
+}

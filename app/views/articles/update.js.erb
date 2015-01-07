@@ -1,0 +1,3 @@
+$('#new-post-modal').remove();
+
+$('#<%= @article.id %>').html("<%= j render partial: 'article_row', locals: {article: @article} %>")

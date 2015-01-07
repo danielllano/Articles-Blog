@@ -1,0 +1,13 @@
+<div class="comment-module">
+  <h4 class="media-heading">
+    <strong><%= comment.commenter %></strong>
+   </h4>
+
+  <p>
+    <%= comment.body %>
+  </p>
+
+  <p>
+    <%= link_to 'Eliminar Comentario', [comment.article, comment], method: :delete, data: { confirm: 'Are you sure?' } %>
+  </p>
+</div>
