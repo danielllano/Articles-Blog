@@ -75,8 +75,11 @@ display: inline-block;
 }
 
 .blog-post-meta {
-margin-bottom: 0px;
-color: #999;
+  margin-bottom: 0px;
+  color: #999;
+  #comment-date {
+    font-size: 14px;
+  }
 }
 
 p {
@@ -110,11 +113,10 @@ input#post_published {
 
 .sidebar-module{
   padding: 2px;
-}
-
-.sidebar-module:hover{
-  background-color: #eee;
-  text-decoration: none;
+  &:hover{
+    background-color: #eee;
+    text-decoration: none;
+  }
 }
 
 .sidebar-titles {
@@ -154,10 +156,6 @@ input#post_published {
 .media-heading,
 #comment-date {
   display: inline-block;
-}
-
-.blog-post-meta#comment-date{
-  font-size: 14px;
 }
 
 a.delete-comment {
