@@ -1,33 +1,43 @@
 
 
-<div class="container">
-
-  <div class="blog-header">
-    <%= link_to 'Nuevo Post', new_article_path, remote: true, class: "btn btn-primary btn-lg pull-right pull" %>
-    <h1 class="blog-title">Articulos</h1>
-    <p class="lead blog-description">Make it Real</p>
-  </div>
-
-    
+<div class="container">    
   <div class="row" id="index-row">
     <div class="col-sm-8 blog-main" id="post_list">
        
-      <% @articles.each do |article| %>
+      <% @articles.order(created_at: :desc).each do |article| %>
         <%= render partial: 'article_row', locals: {article: article} %>
       <% end %>
     </div>
     <div class="new-post col-sm-3 col-sm-offset-1 blog-sidebar">
-      <h2 class="sidebar-title">Ultimos Articulos</h2><hr>
-      <div id="last_posts_list">
-        <% @articles.first(5).each do |article| %>
+      
+      <div class="side-list" id="last_posts_list">
+        <h2 class="sidebar-title">Ultimos Articulos</h2><hr class="sidebar-hr">
+        <% @articles.order(created_at: :desc).first(5).each do |article| %>
           <%= link_to article_path(article) do %>
             <div class="sidebar-module">
-              <h4><%= article.title %></h4>
+              <h4 class="sidebar-titles"><%= article.title %></h4>
               <p class="blog-post-meta"><%= article.created_at %></p>               
             </div><br>
           <% end %>
         <% end %>
       </div>
+
+      <div class="side-list" id="most_commented_posts">
+        <h2 class="sidebar-title">Mas Comentados</h2><hr class="sidebar-hr">
+        <% @ordered_comments.each do |i, c| %>
+          <%  @article=Article.find(i) %>
+          <%= link_to article_path(@article) do %>  
+            <div class="sidebar-module">
+              <h4 class="sidebar-titles"><%= @article.title %></h4>
+              <p class="blog-post-meta"><%= @article.created_at %></p>
+              <p class="blog-post-comments"><%= c %> Comentarios</p>
+            </div><br>
+          <% end %>
+        <% end %>
+        
+       
+      </div>
+
     </div>
     
   </div>

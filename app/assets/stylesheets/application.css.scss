@@ -37,6 +37,12 @@ font-weight: normal;
 color: #333;
 }
 
+.navbar-link {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  margin-top: 26px;
+}
+
 .blog-post {
 margin-bottom: 50px;
 }
@@ -47,10 +53,14 @@ line-height: 1.5;
 }
 
 .blog-title {
-margin-top: 30px;
+margin-top: 10px;
 margin-bottom: 0;
 font-size: 60px;
 font-weight: normal;
+}
+
+.blog-subtitle {
+  font-size: 21px;
 }
 
 .blog-description {
@@ -65,8 +75,11 @@ display: inline-block;
 }
 
 .blog-post-meta {
-margin-bottom: 10px;
-color: #999;
+  margin-bottom: 0px;
+  color: #999;
+  #comment-date {
+    font-size: 14px;
+  }
 }
 
 p {
@@ -100,10 +113,22 @@ input#post_published {
 
 .sidebar-module{
   padding: 2px;
+  &:hover{
+    background-color: #eee;
+    text-decoration: none;
+  }
 }
-.sidebar-module:hover{
-  background-color: #eee;
-  text-decoration: none;
+
+.sidebar-titles {
+  margin-bottom: 0px;
+}
+
+.side-list {
+  margin-bottom: 50px;
+}
+
+.sidebar-hr {
+  margin: 10px 0;
 }
 
 .blog-post-comments {
@@ -117,4 +142,36 @@ input#post_published {
   background-color: #eee;
   padding: 5px;
   margin-bottom: 10px;
+}
+
+.comment-data {
+  display: inline-block;
+  margin-left: 5px;
+}
+
+.comment-user-picture {
+  width: 65px;
+}
+
+.media-heading,
+#comment-date {
+  display: inline-block;
+}
+
+a.delete-comment {
+  display: block;
+  font-size: 15px;
+}
+
+.main-user-picture {
+  width: 80%;
+  border-radius: 50%;
+}
+
+.article-author {
+  text-align: center;
+}
+
+.content-row {
+  margin-top: 10px;
 }
